@@ -24,3 +24,4 @@ def linha2(tamanho):
     corAzul('',tamanho *'⇌⇌⇌⇌','')
 
 linha1(10)
+pika

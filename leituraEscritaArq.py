@@ -2,10 +2,9 @@ import json
 import os
 
 nome_arquivo = "jogos.json"
-limpar = "cls"
 
-def limpa(limpar):
-    return os.system(limpar)
+def limpa():
+    os.system('clear' if os.name == 'posix' else 'cls')
 
 def lerArquivo() -> list:
     arq = open(nome_arquivo, 'r', encoding='utf-8')

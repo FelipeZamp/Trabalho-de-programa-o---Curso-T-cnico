@@ -1,26 +1,28 @@
-class bcolors:
-        verde = '\033[92m'
-        vermelho = '\033[91m'
-        azul = '\033[34m'
-        amarelo = '\033[93m'
-        reset = '\033[0m'
+class Cores:
 
-def corVerde(antecessor,string,sucessor):
-    print(antecessor + bcolors.verde + string + bcolors.reset + sucessor)
+    def __init__(self,verde='\033[92m',vermelho = '\033[91m',azul = '\033[34m',amarelo = '\033[93m',reset = '\033[0m'):
+        self.verde = verde
+        self.vermelho = vermelho
+        self.azul = azul
+        self.amarelo = amarelo
+        self.reset = reset
 
-def corVermelha(antecessor,string,sucessor):
-    print(antecessor + bcolors.vermelho + string + bcolors.reset + sucessor)
+    def corVerde(self,antecessor,string,sucessor):
+        print(antecessor + self.verde + string + self.reset + sucessor)
 
-def corAzul(antecessor,string,sucessor):
-    print(antecessor + bcolors.azul + string + bcolors.reset + sucessor) 
+    def corVermelha(self,antecessor,string,sucessor):
+        print(antecessor + self.vermelho + string + self.reset + sucessor)
 
-def corAmarelo(antecessor,string,sucessor):
-    print(antecessor + bcolors.amarelo + string + bcolors.reset + sucessor)
+    def corAzul(self,antecessor,string,sucessor):
+        print(antecessor + self.azul + string + self.reset + sucessor) 
 
-def linha1(tamanho):
-    corAzul('',tamanho *'-=-','')
+    def corAmarelo(self,antecessor,string,sucessor):
+        print(antecessor + self.amarelo + string + self.reset + sucessor)
 
-def linha2(tamanho):
-    corAzul('',tamanho *'⇌⇌⇌⇌','')
+    def linha1(self,tamanho):
+        self.corAzul('',tamanho *'-=-','')
 
-linha1(10)
+    def linha2(self,tamanho):
+        self.corAzul('',tamanho *'⇌⇌⇌⇌','')
+
+cor = Cores()

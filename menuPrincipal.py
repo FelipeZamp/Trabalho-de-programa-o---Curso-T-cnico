@@ -3,15 +3,15 @@ from funcoesPrincipais import *
 while True:
     opcao = menu()
     if opcao == 1:
-        cadastrarJogos()
+        jogo.cadastrarJogos()
     elif opcao == 2:
-        selecionarJogos()
+        jogo.selecionarJogos()
     elif opcao == 3:
-        deletarJogo()
+        jogo.deletarJogo()
     elif opcao == 4:
-        selecionarPorId()
+        jogo.selecionarPorId()
     elif opcao == 5:
-        alterarJogo()              
+        jogo.alterarJogo()              
     elif opcao == 6:
-        limpa(limpar)
+        limpa()
         break

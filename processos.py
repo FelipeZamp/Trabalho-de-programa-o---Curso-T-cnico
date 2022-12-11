@@ -1,4 +1,3 @@
-from typing import Type
 from leituraEscritaArq import *
 from cores import *
 
@@ -15,7 +14,7 @@ def listaVazia(conteudo):
 def idNaoEncontrada(conteudo, id):
     for i in range(len(conteudo)):
         verificar=1
-        if conteudo[i]['id'] == id:
+        if conteudo[i]['_Jogos__id'] == id:
             indiceID = i
             break               
         else:
@@ -55,7 +54,7 @@ def auxiliarAltJogo(opcao, indice, conteudo):
         if i == opcao:
             atributo = input(f"Digite o(a) novo(a) {nomeAtributo}: ")
             conteudo[indice][nomeAtributo] = atributo
-            cor.corVerde('',f"\n{nomeAtributo} alterado(a) para {atributo}!",'')
+            cor.corVerde('',f"\n{nomeAtributo} alterado(a) para {atributo}!\n",'')
             enterContinuar()
 
 def selecionarOpcao():
@@ -69,7 +68,3 @@ def validarOpcao():
     else:
         cor.corVermelha('','Opção inválida!','')
         return validarOpcao()
-    
-       
-     
-

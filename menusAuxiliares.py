@@ -1,7 +1,6 @@
 from processos import *
 
 def menuBoasVindas():
-
     limpa()
     cor.linha2(11)
     print(' <---TRABALHO DE TÉCNICAS DE PROGAMAÇÃO---> ')

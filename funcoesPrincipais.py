@@ -61,59 +61,59 @@ class Jogos:
         jogos.append(self.__dict__)
         salvarArquivo(jogos)
 
-def selecionarJogos():
-    limpa()
-    cor.linha1(10)
-    jogos = lerArquivo()
-    if listaVazia(jogos) != 1:
-        for jogo in jogos:
-            print(f'ID: {jogo["id"]}')
-            print(f'Nome: {jogo["nome"]}')
-            print(f'Data de lançamento: {jogo["data"]}')
-            print(f'plataforma: {jogo["plataforma"]}')
-            print(f'Gênero: {jogo["genero"]}')
-            print(f'Estudio(s): {jogo["estudio"]}')
-            cor.linha1(10)
-        enterContinuar()
-
-def deletarJogo():
-    limpa()
-    conteudo = lerArquivo()
-    if listaVazia(conteudo) != 1:          
-        idjogo = selecionarID()
-        indice = idNaoEncontrada(conteudo, idjogo)
-        if indice != 0.5:                     
-            del(conteudo[indice])
-            limpa()
-            cor.linha1(10)
-            cor.corVerde('',f'ID {idjogo} Deletado com sucesso','')
-            cor.linha1(10)
-            salvarArquivo(conteudo)
-            enterContinuar()           
-
-def selecionarPorId():
-    limpa()
-    conteudo = lerArquivo()
-
-    if listaVazia(conteudo) != 1:
-        id = selecionarID()
-        indice = idNaoEncontrada(conteudo, id)
-        if indice != 0.5:
-            for n in conteudo[indice]:
-                print(f"{n}: {conteudo[indice][n]}")
-            cor.linha1(10)                
+    def selecionarJogos(self):
+        limpa()
+        cor.linha1(10)
+        jogos = lerArquivo()
+        if listaVazia(jogos) != 1:
+            for jogo in jogos:
+                print(f'ID: {jogo["_Jogos__id"]}')
+                print(f'Nome: {jogo["_Jogos__nome"]}')
+                print(f'Data de lançamento: {jogo["_Jogos__data"]}')
+                print(f'Plataforma: {jogo["_Jogos__plataforma"]}')
+                print(f'Gênero: {jogo["_Jogos__genero"]}')
+                print(f'Estudio(s): {jogo["_Jogos__estudio"]}')
+                cor.linha1(10)
             enterContinuar()
 
+    def deletarJogo(self):
+        limpa()
+        conteudo = lerArquivo()
+        if listaVazia(conteudo) != 1:          
+            idjogo = selecionarID()
+            indice = idNaoEncontrada(conteudo, idjogo)
+            if indice != 0.5:                     
+                del(conteudo[indice])
+                limpa()
+                cor.linha1(10)
+                cor.corVerde('',f'ID {idjogo} Deletado com sucesso','')
+                cor.linha1(10)
+                salvarArquivo(conteudo)
+                enterContinuar()           
 
-def alterarJogo():
-    limpa()
-    conteudo = lerArquivo()   
-    if listaVazia(conteudo) != 1:
-        idjogo = selecionarID()
-        indice = idNaoEncontrada(conteudo, idjogo)
-        if indice != 0.5:
-            opcao = menuAlterarJG()
-            auxiliarAltJogo(opcao, indice, conteudo)
-            salvarArquivo(conteudo)
+    def selecionarPorId(self):
+        limpa()
+        conteudo = lerArquivo()
+
+        if listaVazia(conteudo) != 1:
+            id = selecionarID()
+            indice = idNaoEncontrada(conteudo, id)
+            if indice != 0.5:
+                for n in conteudo[indice]:
+                    print(f"{n}: {conteudo[indice][n]}")
+                cor.linha1(10)                
+                enterContinuar()
+
+
+    def alterarJogo(self):
+        limpa()
+        conteudo = lerArquivo()   
+        if listaVazia(conteudo) != 1:
+            idjogo = selecionarID()
+            indice = idNaoEncontrada(conteudo, idjogo)
+            if indice != 0.5:
+                opcao = menuAlterarJG()
+                auxiliarAltJogo(opcao, indice, conteudo)
+                salvarArquivo(conteudo)
 
 jogo = Jogos()
